@@ -79,7 +79,7 @@ section{
   justify-content: space-between;
   align-items: center;
   padding: 100px;
-  background: linear-gradient(180deg, #008aff,#ff137d),url(/assets/images/3775.jpg);
+  background: linear-gradient(180deg, #008aff,#ff137d),url(assets/images/3775.jpg);
   background-blend-mode: screen;
   background-size: cover;
   
