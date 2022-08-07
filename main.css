@@ -315,7 +315,7 @@ img {
   :root {
     --primary-title-font-size: 5.6rem;
     --secondary-title-font-size: 4.8rem;
-    --num-of-grid-columns: 8;
+    --num-of-grid-columns: 4;
     --section-spacing: 8rem 4rem;
   }
   .hero {
