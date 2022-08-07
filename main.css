@@ -239,6 +239,7 @@ img {
 }
 .main-footer .row {
   padding: 0;
+  align-items: baseline;
 }
 .info-box {
   grid-column: span 4;
@@ -348,7 +349,7 @@ img {
 }
 @media screen and (min-width: 1024px) {
   :root {
-    --number-of-grid-columns: 12;
+    --num-of-grid-columns: 12;
     --section-spacing: 12rem 4rem;
   }
   .nav-list {
@@ -372,7 +373,7 @@ img {
   .mobile-toggle {
     display: none;
   }
-  /*
+  
   .grid-image {
     grid-column: span 7;
     margin: 0;
@@ -389,5 +390,5 @@ img {
   .video-call .text-group {
     grid-column: 2 / span 10; 
   }
-  */
+ 
 }
