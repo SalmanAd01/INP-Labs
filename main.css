@@ -295,6 +295,11 @@ img {
   background-color: var(--brand-clr);
   margin-bottom: 3.2rem;
 }
+.main-footer .remove-grid{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .main-footer .btn-brand {
   line-height: 1.8rem;
 }
