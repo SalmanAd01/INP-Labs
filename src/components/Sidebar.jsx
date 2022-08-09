@@ -21,7 +21,7 @@ const Sidebar = () => {
       flex={1}
       p={2}
       sx={{   
-            width:'350px',      
+            width:'12rem',      
     }}
     >
       <Box position={"fixed"}>
