@@ -3,6 +3,7 @@ import {
   Avatar,
   Badge,
   Box,
+  Drawer,
   InputBase,
   styled,
   Toolbar,
@@ -14,8 +15,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import { Notifications } from "@mui/icons-material";
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { useSelector,useDispatch } from "react-redux";
-import {openNav,closeNav} from '../actions/nav'
+import Sidebar from "./Sidebar";
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
@@ -46,6 +46,7 @@ const UserBox = styled(Box)(({ theme }) => ({
 //   backgroundColor: "inherit",
 }));
 const Navbar = () => {
+  const [opendrawer, setopendrawer] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -54,15 +55,13 @@ const Navbar = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const nav = useSelector(state => state.changeNavToggle);
-  const dispatch = useDispatch();
   return (
     <AppBar position="sticky">
       <StyledToolbar>
-        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
+        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }} onClick={()=>setopendrawer(true)}>
           Navbar
         </Typography>
-        <MenuIcon sx={{ display: { xs: "block", sm: "none" } }} onClick={()=>!nav?dispatch(openNav()):dispatch(closeNav())} />
+        <MenuIcon sx={{ display: { xs: "block", sm: "none" } }} onClick={()=>setopendrawer(true)} />
         <Search >
           <InputBase placeholder="Search..." sx={{color:'black'}}>Search</InputBase>
         </Search>
@@ -110,6 +109,13 @@ const Navbar = () => {
         <MenuItem>My account</MenuItem>
         <MenuItem>Logout</MenuItem>
       </Menu>
+      <Drawer
+      anchor='left'
+      open={opendrawer}
+      onClose={()=>setopendrawer(false)}
+    >
+      <Sidebar  />
+    </Drawer>
     </AppBar>
   );
 };

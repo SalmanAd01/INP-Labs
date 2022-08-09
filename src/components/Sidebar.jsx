@@ -20,9 +20,8 @@ const Sidebar = () => {
     <Box
       flex={1}
       p={2}
-      sx={{ display: { xs: nav?"block":"none", sm: "block" },
-             zIndex: { xs: 2 },
-             position: { xs: "static" },        
+      sx={{   
+            width:'350px',      
     }}
     >
       <Box position={"fixed"}>
