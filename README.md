@@ -1,2 +1,2 @@
 # INP-Labs
-Prac2 https://peppy-pixie-5307e0.netlify.app/
+Exp-2 https://extraordinary-semifreddo-f25532.netlify.app/
