@@ -14,27 +14,34 @@
         <img class="nav-logo" src="static/assets/logo.png" alt="logo">
         <nav class="nav">
             <ul class="nav-list">
-                <li><a class="nav-link" href="#">Home</a></li>
-                <li><a class="nav-link" href="#">About</a></li>
+                <li><a class="nav-link" href="#hero">Home</a></li>
+                <li><a class="nav-link" href="#about">About</a></li>
                 <li><a class="nav-link" href="#">Signup</a></li>
                 <li><a class="nav-link" href="#">Login</a></li>
                 <li><a class="nav-link" href="#">Contact</a></li>
             </ul>
         </nav>
+        <div class="nav-mobile-btn">
+            <ion-icon class="nav-mobile-icon" name="menu-outline" onclick="openNav()"></ion-icon>
+            <ion-icon class="nav-mobile-icon" name="close-outline" onclick="closeNav()"></ion-icon>
+        </div>
     </header>
     <main>
-        <section class="section-hero">
-            <div class="hero">
-                <p>Hero Section</p>
-            </div>
+        <section class="section-hero" id="hero">
+          <div class="hero">
+            <p>Hero section</p>
+          </div>
         </section>
-    </main>
-    <section class="section-hero">
+      </main>
+  
+      <section class="section-services" id="about">
         <div class="hero">
-            <p>About Section</p>
+          <p>About section</p>
         </div>
-    </section>
+      </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="static/js/script.js"></script>
 </body>
-<script src="static/js/script.js"></script>
 
 </html>

@@ -13,21 +13,22 @@
 html {
   font-size: 62.5%;
   font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
 }
 
 .header {
   background-color: var(--clr-dark-blue);
   padding: 0 4.8rem;
-  height: 10rem;
+  height: 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .nav-logo {
   height: 6rem;
-}
-.nav {
-  display: flex;
 }
 .nav-list {
   display: flex;
@@ -42,6 +43,7 @@ html {
 
 .nav-link:link,
 .nav-link:visited {
+  display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 500;
@@ -53,4 +55,85 @@ html {
 .nav-link:active {
   color: var(--clr-light-blue);
 }
+.nav-mobile-btn {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+.nav-mobile-icon {
+  color: var(--clr-light-grey);
+  width: 4rem;
+  height: 4rem;
+}
+.nav-mobile-icon[name="close-outline"] {
+  display: none;
+}
+.section-hero,
+.section-services {
+  padding: 9.6rem 0;
+  background-color: #a5d8ff;
+  height: 60vh;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-services {
+  background: #f3f0ff;
+}
+
+.section-hero p,
+.section-services p {
+  font-size: 3.2rem;
+}
+
+@media (max-width: 986px) {
+  .nav-mobile-btn {
+    display: block;
+  }
+  .nav-logo {
+    height: 4rem;
+  }
+  .header {
+    height: 6rem;
+    position: relative;
+  }
+  .nav {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--clr-dark-blue);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .active .nav {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    position: fixed;
+  }
+  .active .nav-mobile-btn .nav-mobile-icon[name="close-outline"] {
+    display: block;
+    position: fixed;
+    right: 5rem;
+    top: 1rem;
+  }
+
+  .active .nav-mobile-btn .nav-mobile-icon[name="menu-outline"] {
+    display: none;
+  }
+}
