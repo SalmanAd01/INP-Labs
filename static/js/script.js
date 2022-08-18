@@ -16,3 +16,10 @@ navBtn.addEventListener('click', () => {
         navBar.style = "display: none !important";
     }
 })
+
+const avatarImg = document.getElementById('avatar-img')
+const avatarRefresh = document.getElementById('avatar-refresh')
+
+avatarRefresh.addEventListener('click', () => {
+    avatarImg.src = "https://avatars.dicebear.com/api/avataaars/" + Math.random() +".svg";
+})
