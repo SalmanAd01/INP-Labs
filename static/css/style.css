@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+:root {
+  --heading-text: "Lobster", cursive;
+  --font-text: "Roboto", sans-serif;
+  --clr-dark-blue: #001920;
+  --clr-light-blue: #1fa2c5;
+  --clr-light-grey: #d9d9d9;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+.header {
+  background-color: var(--clr-dark-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+  padding-right: 2rem;
+}
+.nav-list {
+  list-style: none;
+}
+.nav-link {
+  text-decoration: none;
+  font-family: var(--heading-text);
+  font-size: 2rem;
+  color: var(--clr-light-grey);
+}
+.nav-logo {
+  height: 6rem;
+}
+.nav-link:hover {
+  color: var(--clr-light-blue);
+}
+.nav-bar {
+  color: var(--clr-light-grey);
+  font-size: 3rem;
+  display: none;
+}
+.nav-icon-btn {
+  display: none;
+}
+.nav-close {
+  color: var(--clr-light-grey);
+  font-size: 3rem;
+  display: none;
+}
+@media (max-width: 986px) {
+  .nav {
+    position: fixed;
+    left: -100%;
+    top: 8rem;
+    flex-direction: column;
+    background-color: var(--clr-dark-blue);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 1;
+    padding: 4rem 0;
+  }
+  .nav.active {
+    left: 0;
+  }
+  .nav-close {
+    display: none !important;
+  }
+  .nav-bar {
+    display: block;
+  }
+  .nav-icon-btn {
+    display: block;
+    margin-right: 4rem;
+  }
+}
