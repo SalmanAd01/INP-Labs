@@ -1,14 +1,10 @@
 const names = document.getElementById("name")
-const mobile = document.getElementById("mobile")
 const email = document.getElementById("email")
-const birthday = document.getElementById("birthday")
 const password = document.getElementById("password")
 
 
 const nameRegex = /^[a-zA-Z ]{3,}$/
-const mobileRegex = /^[0-9]{10}$/
 const emailRegex = /^[a-zA-Z0-9]{9,}@gst\.sies\.edu\.in$/
-const birthdayRegex = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/
 const passwordRegex = /^([a-zA-Z0-9@]){8,}$/
 function validate(e) {
     e.preventDefault();
@@ -16,25 +12,8 @@ function validate(e) {
         alert("Name Is Not Valid")
         return
     }
-    if (!mobileRegex.test(mobile.value)) {
-        alert("Mobile No is Not Valid")
-        return
-    }
     if (!emailRegex.test(email.value)) {
         alert("Email Is Not Valid")
-        return
-    }
-    if (!birthdayRegex.test(birthday.value)) {
-        console.log("Hi")
-        alert("Birthday is Not Valid")
-        return
-    }
-    const currentDate = new Date();
-    const currntYear = currentDate.getFullYear();
-    const inputYear = new Date(birthday.value.slice(0, 4)).getFullYear()
-    console.log(inputYear, currntYear);
-    if (inputYear + 6 >= currntYear) {
-        alert("Birthday is Not Valid")
         return
     }
     if (!passwordRegex.test(password.value)) {
@@ -42,5 +21,60 @@ function validate(e) {
         return
     }
     alert("Thanks For Filling the Form")
-
 }
+window.onload = function () {
+    alert("Welcome to the form")
+}
+names.addEventListener("blur", function () {
+    if (!nameRegex.test(names.value)) {
+        names.style.border = "5px solid red"
+    }
+    else {
+        names.style.border = "5px solid green"
+    }
+})
+email.addEventListener("blur", function () {
+    if (!emailRegex.test(email.value)) {
+        email.style.border = "5px solid red"
+    }
+    else {
+        email.style.border = "5px solid green"
+    }
+})
+password.addEventListener("blur", function () {
+    if (!passwordRegex.test(password.value)) {
+        password.style.border = "5px solid red"
+    }
+    else {
+        password.style.border = "5px solid green"
+    }
+})
+
+names.addEventListener("focus", function () {
+    names.style.border = "5px solid blue"
+})
+email.addEventListener("focus", function () {
+    email.style.border = "5px solid blue"
+})
+password.addEventListener("focus", function () {
+    password.style.border = "5px solid blue"
+})
+names.addEventListener("mouseover",function (){
+    names.style.border = "5px solid blue"
+})
+names.addEventListener("mouseout",function (){
+    names.style.border = ""
+})
+email.addEventListener("mouseover",function (){
+    email.style.border = "5px solid blue"
+})
+email.addEventListener("mouseout",function (){
+    email.style.border = ""
+})
+password.addEventListener("mouseover",function (){
+    password.style.border = "5px solid blue"
+})
+password.addEventListener("mouseout",function (){
+    password.style.border = ""
+})
+
